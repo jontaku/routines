@@ -46,3 +46,31 @@
   padding: 46px 40px 0;
 }
 
+.routine {
+  margin: 10px 0 0 0;
+}
+
+.upper-routine {
+  display: flex;
+}
+
+.routine-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.routine-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-routine {
+  margin-top: 10px;
+}
+
+.routine-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
