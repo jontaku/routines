@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   
   root to: "routines#index"
-  resources :routines, only:  [:index]
+  resources :routines, only: [:index, :new, :create]
   resources :users, only: [:edit, :update]
 end
