@@ -1,3 +1,4 @@
+/* routine index */
 .wrapper {
   display: flex;
 }
@@ -6,7 +7,13 @@
   width: 300px;
   height: 100vh;
 }
+.maim_routine {
+  background-color: #FFFFFF;
+  width: calc(100vw - 300px);
+  height: 100vh;
+}
 
+/* side_bar_header */
 .side-bar-header {
   height: 100px;
   padding: 0 20px;
@@ -15,7 +22,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .nav {
   font-size: 18px;
   display: flex;
@@ -24,82 +30,79 @@
   width: 100%;
   padding: 1vh 0;
 }
-
-.lists-left {
-  display: flex;
-  min-width: 200px;
-
-}
-
-.lists-right {
+.lists-nav {
   display: flex;
   list-style: none;
   align-items: flex-end;
 }
-
-
 .user-nickname {
   margin-right: 3vw;
   font-weight: bold;
   color: #FAFAFA;
   text-decoration: none;
 }
-
 .logout {
   color: #FAFAFA;
   text-decoration: none;
 }
-
 .login {
   line-height: 32px;
   margin-right: 3vw;
   color: #FAFAFA;
   text-decoration: none;
 }
-
 .sign-up {
   color: #FAFAFA;
   text-decoration: none;
 }
 
+/* side_bar_main */
 .my_routines {
   background-color: #2F3E51;
   height: calc(100vh - 100px);
   padding: 0 20px;
   overflow: scroll;
 }
-.my_routines {
-  padding: 20px 0 40px;
+.my_routine {
+  width: calc((100% - 50px) / 3);
+  margin-bottom: 40px;
+  color: #FAFAFA;
 }
-
-.my_routine-name a {
-  text-decoration: none;
-  color: white;
+.my_routine__name {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
-
-.other_routine {
-  background-color: #FFFFFF;
-  width: calc(100vw - 300px);
+.my_routine__done {
+  font-size: 16px;
 }
-
-.routines {
-  background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px);
-  padding: 46px 40px 0;
+.my_routine__count {
+  font-size: 16px;
 }
 
 /* mein */
-
+.routines {
+  background-color: #FAFAFA;
+  height: calc(100vh - 100px);
+  padding: 46px 40px 0;
+}
 .routine {
   width: calc((100% - 50px) / 3);
   margin-bottom: 40px;
 }
-
 .routine__title {
   display: block;
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
+}
+.routine__user {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+  text-decoration: underline;
 }
 .routine__continued_time {
   font-size: 16px;
@@ -110,13 +113,7 @@
 .routine__result {
   font-size: 16px;
 }
-.routine__user {
-  display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-  text-decoration: underline;
-}
+
 
 /* フォーム周り */
 .form__wrapper{
@@ -155,25 +152,5 @@
 .form__btn:hover {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
-}
-
-/* サイドバーの一覧 */
-
-.my_routine {
-  width: calc((100% - 50px) / 3);
-  margin-bottom: 40px;
-}
-
-.my_routine__name {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-.my_routine__count {
-  font-size: 16px;
-}
-.my_routine__done {
-  font-size: 16px;
 }
 
