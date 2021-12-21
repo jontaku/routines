@@ -1,4 +1,6 @@
 class RoutinesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @routines = Routine.all
     if user_signed_in?

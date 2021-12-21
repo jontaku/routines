@@ -1,4 +1,5 @@
 class MyRoutinesController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :new, :create]
 
   def index
     @my_routines = MyRoutine.where(user_id: current_user.id)
