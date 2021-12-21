@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_16_062530) do
+ActiveRecord::Schema.define(version: 2021_12_17_103146) do
+
+  create_table "my_routines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "routine_name", null: false
+    t.text "my_routine_content"
+    t.text "reason"
+    t.text "effect"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_my_routines_on_user_id"
+  end
+
+  create_table "routine_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "my_routine_id", null: false
+    t.datetime "start_time", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["my_routine_id"], name: "index_routine_records_on_my_routine_id"
+    t.index ["user_id"], name: "index_routine_records_on_user_id"
+  end
 
   create_table "routines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -37,5 +58,8 @@ ActiveRecord::Schema.define(version: 2021_12_16_062530) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "my_routines", "users"
+  add_foreign_key "routine_records", "my_routines"
+  add_foreign_key "routine_records", "users"
   add_foreign_key "routines", "users"
 end

@@ -13,15 +13,5 @@
 </div>
 
 <div class="my_routines">
-  <div class="my_routine">
-    <div class="my_routine-name">
-      <a href="#">techroom1</a>
-    </div>
-  </div>
-  <div class="my_routine">
-    <div class="my_routine-name">
-      <a href="#">techroom2</a>
-    </div>
-  </div>
-
+  <%= render partial: 'routines/my_routine', collection: @my_routines %>
 </div>

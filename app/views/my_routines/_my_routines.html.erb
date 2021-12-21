@@ -1,0 +1,13 @@
+<%= render "shared/header" %>
+
+<div class="col-md-8">
+  <%= month_calendar events: @routine_records do |date, routine_records| %>
+    <%= date.day %>
+
+    <% routine_records.each do |routine_record| %>
+      <div>
+        <%= routine_record.my_routine.routine_name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

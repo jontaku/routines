@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :routines
+  has_many :my_routines
+  has_many :routine_records
 end

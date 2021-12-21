@@ -1,6 +1,7 @@
 class RoutinesController < ApplicationController
   def index
     @routines = Routine.all
+    @my_routines = MyRoutine.all
   end
 
   def new
