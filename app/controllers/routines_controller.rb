@@ -2,7 +2,7 @@ class RoutinesController < ApplicationController
   def index
     @routines = Routine.all
     if user_signed_in?
-      @my_routines = MyRoutine.all
+      @my_routines = MyRoutine.where(user_id: current_user.id)
     end
   end
 

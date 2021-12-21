@@ -1,8 +1,8 @@
 class MyRoutinesController < ApplicationController
 
   def index
-    @my_routines = MyRoutine.all
-    @routine_records = RoutineRecord.all
+    @my_routines = MyRoutine.where(user_id: current_user.id)
+    @routine_records = RoutineRecord.where(user_id: current_user.id)
   end
 
   def new
