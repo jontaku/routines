@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+.routine-header{
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-title {
+  color: #333;
+  font-size: 24px;
+  margin-top: 36px;
+}
+
+.nav__right {
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.nav__btn {
+  text-decoration: none;
+  border: 1px solid #253141;
+  color: #253141;
+  padding: 20px;
+}

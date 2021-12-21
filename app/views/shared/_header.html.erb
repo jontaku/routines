@@ -1,0 +1,18 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class="routine-header">
+    <div class="left-header">
+      <div class="header-title">
+        Routines
+      </div>
+    </div>
+    <div class="right-header">
+      <div class="nav__right">
+        <%= link_to "My routines", my_routines_path,  class: :nav__btn %>
+        <%= link_to "My routinesの追加", new_my_routine_path,  class: :nav__btn %>
+        <%= link_to "みんなのroutines", routines_path, class: :nav__btn %>
+        <%= link_to "投稿する", new_routine_path, class: :nav__btn %>
+      </div>
+    </div>
+  </div>
+</header>

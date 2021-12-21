@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'routines/index'
+  devise_for :users
+  
+  root to: "routines#index"
+  resources :routines, only: [:index, :new, :create]
+  resources :users, only: [:edit, :update]
+  resources :my_routines, only: [:index,:new, :create] do
+    resources :routine_records, only: [:new, :create]
+  end
 end

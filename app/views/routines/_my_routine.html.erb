@@ -1,0 +1,9 @@
+<div class="my_routine">
+  <div class="my_routine__body">
+    <%= link_to my_routine.routine_name, class: :my_routine__name%>
+    <%= link_to "実行した", my_routine_routine_records_path(my_routine.id, current_user.id), method: :post, class: "my_routine__done"%>
+    <p class="routine__count">
+      実行回数○回
+    </p>
+  </div>
+</div>
