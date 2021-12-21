@@ -1,7 +1,9 @@
 class RoutinesController < ApplicationController
   def index
     @routines = Routine.all
-    @my_routines = MyRoutine.all
+    if user_signed_in?
+      @my_routines = MyRoutine.all
+    end
   end
 
   def new

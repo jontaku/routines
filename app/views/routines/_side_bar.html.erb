@@ -11,7 +11,8 @@
     </ul>
   </div>
 </div>
-
-<div class="my_routines">
-  <%= render partial: 'routines/my_routine', collection: @my_routines %>
-</div>
+<% if user_signed_in? %>
+  <div class="my_routines">
+    <%= render partial: 'routines/my_routine', collection: @my_routines %>
+  </div>
+<% end %>
