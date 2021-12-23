@@ -2,7 +2,7 @@
 <header class='top-page-header'>
   <div class="routine-header">
     <div class="left-header-title">
-      Routines
+      <%= link_to "Routines", root_path , class: :nav__title%>
     </div>
     <div class="nav__right">
       <% if user_signed_in? %>

@@ -19,6 +19,31 @@ class MyRoutinesController < ApplicationController
     end
   end
 
+  def edit
+    my_routine = MyRoutine.find(params[:id])
+    redirect_to root_path unless current_user.id == my_routine.user.id
+    @my_routine = MyRoutine.find(params[:id])
+  end
+
+  def update
+    @my_routine = MyRoutine.find(params[:id])
+    if @my_routine.update(my_routine_params)
+      redirect_to my_routine_path(@my_routine.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    my_routine = MyRoutine.find(params[:id])
+    my_routine.destroy
+    redirect_to root_path
+  end
+
+  def show
+    @my_routine = MyRoutine.find(params[:id])
+  end
+
   private
 
   def my_routine_params

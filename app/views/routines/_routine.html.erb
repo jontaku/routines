@@ -1,13 +1,14 @@
 <div class="routine">
   <div class="routine__body">
-    <%= link_to routine.title, "#", method: :get, class: :routine__title%>
-    <%= link_to routine.user.name, "#", class: :routine__user %>
-    <p class="routine__continued_time">
-      <%= routine.continued_time %>
-    </p>
-    <p class="routine__introduction">
-      <%= routine.introduction %>
-    </p>
+    <%= link_to routine.title, routine_path(routine.id), method: :get, class: :routine__title%>
+    <div class = "routine__bottom">
+      <p class="routine__user ">
+        <%=  routine.user.name  %>
+      </p>
+      <p class="routine__continued_time">
+        <%= routine.continued_time %>
+      </p>
+    </div>
     <p class="routine__result">
       <%= routine.result %>
     </p>

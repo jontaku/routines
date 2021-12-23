@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "routines/side_bar" %>
+  </div>
+  <div class="other_routine">
+    <%= render "shared/header" %>
+    <div class="my_routine__wrapper">
+      <% if user_signed_in? && current_user.id == @my_routine.user_id %>
+        <div class="my_routine__lists">
+          <%= link_to "編集する", edit_my_routine_path(@my_routine.id), method: :get , class: :my_routine__btn %>
+          <%= link_to "削除する", my_routine_path(@my_routine.id), method: :delete, class: :my_routine__btn %>
+        </div>
+      <% end %>
+      
+      <div class="my_routine__detail_body">
+        <div class="my_routine__detail">
+          <p class="detail__title">タイトル</p>
+          <p class="detail_my_routine_name">
+            <%= @my_routine.routine_name %>
+          </p>
+        </div>
+        <div class="my_routine__detail">
+          <p class="detail__title">内容</p>
+          <p class="detail__content">
+            <%= @my_routine.my_routine_content %>
+          </p>
+        </div>
+        <div class="my_routine__detail">
+          <p class="detail__title">理由</p>
+          <p class="detail__content">
+            <%= @my_routine.reason %>
+          </p>
+        </div>
+        <div class="my_routine__detail">
+          <p class="detail__title">期待する効果</p>
+          <p class="detail__content">
+            <%= @my_routine.effect %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

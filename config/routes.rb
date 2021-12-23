@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   
   root to: "routines#index"
-  resources :routines, only: [:index, :new, :create]
+  resources :routines
   resources :users, only: [:edit, :update]
-  resources :my_routines, only: [:index,:new, :create] do
+  resources :my_routines do
     resources :routine_records, only: [:new, :create]
   end
 end

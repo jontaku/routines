@@ -1,0 +1,35 @@
+<div class="my_routine__wrapper">
+  <% if user_signed_in? && current_user.id == @routine.user_id %>
+    <div class="my_routine__lists">
+      <%= link_to "編集する", edit_routine_path(@routine.id), method: :get , class: :my_routine__btn %>
+      <%= link_to "削除する", routine_path(@routine.id), method: :delete, class: :my_routine__btn %>
+    </div>
+  <% end %>
+  
+  <div class="my_routine__body">
+    <div class="my_routine__detail">
+      <p class="detail__title">タイトル</p>
+      <p class="detail_my_routine_title">
+        <%= @routine.title %>
+      </p>
+    </div>
+    <div class="my_routine__detail">
+      <p class="detail__title">継続期間</p>
+      <p class="detail__content">
+        <%= @routine.continued_time %>
+      </p>
+    </div>
+    <div class="my_routine__detail">
+      <p class="detail__title">理由/効果</p>
+      <p class="detail__content">
+        <%= @routine.introduction %>
+      </p>
+    </div>
+    <div class="my_routine__detail">
+      <p class="detail__title">結果</p>
+      <p class="detail__content">
+        <%= @routine.result %>
+      </p>
+    </div>
+  </div>
+</div>

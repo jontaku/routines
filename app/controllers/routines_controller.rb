@@ -21,6 +21,32 @@ class RoutinesController < ApplicationController
     end
   end
 
+  def edit
+    routine = Routine.find(params[:id])
+    redirect_to root_path unless current_user.id == routine.user.id
+    @routine = Routine.find(params[:id])
+  end
+
+  def update
+    @routine = Routine.find(params[:id])
+    if @routine.update(routine_params)
+      redirect_to routine_path(@routine.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    routine = Routine.find(params[:id])
+    routine.destroy
+    redirect_to root_path
+  end
+
+  def show
+    @routine = Routine.find(params[:id])
+  end
+
+
   private
 
   def routine_params
