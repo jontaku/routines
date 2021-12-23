@@ -1,41 +1,55 @@
-# テーブル設計
+# アプリケーション名
 
-## users テーブル
+Routines
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| name               | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-| nickname           | string | null: false |
+# アプリケーション概要
 
-### Association
+習慣化したことを管理、記録できる。
 
-- has_many :my_routines
-- has_many :routines
+# URL
 
 
-## my_routines テーブル
 
-| Column         | Type   | Options     |
-| ---------------| ------ | ----------- |
-| routine_name   | string | null: false |
-| reason         | text   | null: false |
+# テスト用アカウント
 
-### Association
 
-- belongs_to :user
 
-## routines テーブル
+# 利用方法
 
-| Column             | Type       | Options                        |
-| -------------------| ---------- | ------------------------------ |
-| title              | string     | null: false                    |
-| continued_time     | siring     | null: false                    |
-| introduction       | text       | null: false                    |
-| result             | text       | null: false                    |
-| user               | references | null: false, foreign_key: true |
+新規登録をする。
+my routine、routineの登録画面で登録をする。
+my routineは実行ボタンを押すと実行記録として記録をすることができる。
+routineは他のユーザーにおすすめの習慣として投稿でき、また、他のユーザーのおすすめの習慣を一覧で見ることができる。
 
-### Association
+# アプリケーションを作成した背景
 
-- belongs_to :user
+ある習慣を身につけたいと思っていても、日が経つにつれて意欲がなくなってしまうことがなくなるように、日々実行記録を残して生活の一部にできる手助けになるものを作りたかった。
+
+# 洗い出した要件
+
+https://docs.google.com/spreadsheets/d/1RLAiWz5fNqfoEwuTRznIMOcZO9dUXsd5qt3gpwS_O6M/edit#gid=982722306
+
+# 画像やGIFおよびその説明
+
+
+
+# データベース設計
+
+![ER](https://user-images.githubusercontent.com/93565271/147206316-41892727-c68b-4ab3-8fc1-31226da6764b.png)
+
+
+# 画面遷移図
+
+![senizu](https://user-images.githubusercontent.com/93565271/147206386-c11774f9-eca2-4153-be74-03027874e7b0.png)
+
+
+# 開発環境
+
+・フロントエンド：HTML,CSS
+・バックエンド：Ruby(ver2.6.5),Ruby on Rails(ver6.0.0)
+・テスト：Rspec
+・テキストエディタ：Visual Study Cord
+・タスク管理：GitHub
+
+# ローカルでの操作方法
+
