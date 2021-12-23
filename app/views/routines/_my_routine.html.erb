@@ -4,6 +4,6 @@
 <div class="my_routine__body">
   <%= link_to "実行した", my_routine_routine_records_path(my_routine.id, current_user.id), method: :post, class: "my_routine__done"%>
   <p class="routine__count">
-    総回数<%= my_routine.routine_records.count %>回
+    総回数  <%= my_routine.routine_records.count %>回
   </p>
 </div>
